@@ -28,5 +28,14 @@ class Hero:
             self.hp = 0
 
         print(f"{self.name} takes {damage} damage. Health is now {self.hp}.")
+
+    def special_ability(self): 
+       while self.rounds > 10:
+            if self.hp > 50: 
+                self.attack_power += 100
+            print(f"New attack power: {self.special_ability}")
+
     def is_alive(self):
         return self.hp > 0
+    
+
