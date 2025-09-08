@@ -19,7 +19,7 @@ class Hero:
         self.attack_power = random.randint(20, 40) 
 
     def strike(self):
-        return random.randint(1, self.attack_power)
+        return random.randint(15, self.attack_power)
     
     def receive_damage(self, damage):
         self.hp -= damage
@@ -29,11 +29,7 @@ class Hero:
 
         print(f"{self.name} takes {damage} damage. Health is now {self.hp}.")
 
-    def special_ability(self): 
-       while self.rounds > 10:
-            if self.hp > 50: 
-                self.attack_power += 100
-            print(f"New attack power: {self.special_ability}")
+    
 
     def is_alive(self):
         return self.hp > 0

@@ -17,6 +17,7 @@ def main():
     defeated_goblins = 0
     rounds = 0
     hero_damage = 0
+
     # Battle Loop 
     while hero.is_alive() and any(goblin.is_alive() for goblin in goblins):
         print("\nNew Round!")
@@ -40,11 +41,33 @@ def main():
                 print(f"{goblin.name} attacks hero for {damage} damage!")
                 hero.receive_damage(damage)
 
-    # Determine outcome
+
+    #def special_ability(hero): 
+    #   while rounds > 5:
+    #        if hero.hp > 30: 
+    #            hero.attack_power += 100
+    #            print(f"New attack power: {hero.special_ability}")
+
+
     if hero.is_alive():
-        print(f"\nThe hero has defeated all the goblins! ༼ ᕤ◕◡◕ ༽ᕤ")
+        print(f"\nThe hero has been defeated all the goblins1")
     else:
-        print(f"\nThe hero has been defeated. Game Over. (｡•́︿•̀｡)")
+        print(f"\nThe hero has been defeated. Game over.")
+
+    if hero.is_alive():
+        girl = LLorona("Llorona")
+        print("\Boss Round")
+        while hero.is_alive() and girl.is_alive():
+            damage = hero.strike()
+            girl.take_damage(damage)
+
+            damage = girl.attack()
+            hero.receive_damage(damage)
+        if hero.is_alive():
+            print(f"\nThe hero has been defeated all the goblins1")
+        else:
+            print(f"\nThe hero has been defeated. Game over.")
+
     print("Batte Summary:")
     print(f"\nTotal Damage: {hero_damage}")
     print(f"\nRounds Survived: {rounds}")
